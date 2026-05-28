@@ -3,6 +3,11 @@ import csv
 import os
 import bisect
 
+st.set_page_config(
+    page_title="+1検索",  # ここに好きな名前を入れる
+    page_icon="🧩",       # 絵文字や画像URLを指定可能
+)
+
 # ページの最上部にアンカーを設置
 st.markdown('<div id="top"></div>', unsafe_allow_html=True)
 
@@ -86,24 +91,20 @@ if st.session_state.last_query:
 # --- 5. フッター & 固定ボタン ---
 st.markdown("""
     <style>
-    .back-to-top {
+    .fixed-link {
         position: fixed;
         bottom: 80px;
-        right: 30px;
-        background-color: #f0f2f6;
+        right: 20px;
+        background-color: #ff4b4b;
+        color: white !important;
         padding: 10px 20px;
-        border-radius: 10px;
+        border-radius: 50px;
         text-decoration: none;
-        color: #31333F;
-        font-size: 14px;
+        z-index: 999999;
         font-weight: bold;
-        border: 1px solid #d1d5db;
-        z-index: 1000;
-        box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
     }
-    .back-to-top:hover { background-color: #e0e2e6; color: #ff4b4b; }
     </style>
-    <a href="#top" class="back-to-top">Topへ移動</a>
+    <a href="#top" class="fixed-link">↑ TOPへ移動</a>
     """, unsafe_allow_html=True)
 
 st.markdown("---")
